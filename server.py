@@ -22,13 +22,14 @@ class TCP_server :
         #receive message
         msg = client_name.recv(1024).decode()
         #send confirmation of msg rec
-        client_name.send(("received").encode())
-        print(str(msg))
+        #client_name.send(("Message received").encode())
+        print(str(addr) + " " + str(msg))
 
 def main():
-    while True:
+    #while True:
         #instatiate and go
-        server = TCP_server()
+    server = TCP_server()
+    while True:
         server.go()
 
 if __name__ == "__main__":
