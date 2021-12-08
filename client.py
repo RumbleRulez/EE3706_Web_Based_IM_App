@@ -11,8 +11,8 @@ class TCP_conn_client: # (threading.Thread):
     #def __init__(self):
     def conn(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.connect((socket.gethostname(),5000))
-        #self.sock.connect(('localhost',5000))
+        #self.sock.connect((socket.gethostname(),5000))
+        self.sock.connect(('localhost',5000))
     #send message function
     def send_msg(self, msg):
         self.sock.send((msg).encode())
@@ -30,13 +30,7 @@ def main():
     while True:
         client.conn()
         client.send_msg(input("Message: "))
-        #client.recieve_msg()
-
-        #send_thread = threading.Thread(client.send_msg(input("Message: ")))        
-        #send_thread.start()
-
-        #rec_thread = threading.Thread(client.recieve_msg())
-        #rec_thread.start()
+        client.recieve_msg()
 
 
 if __name__ == "__main__":
