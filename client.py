@@ -30,14 +30,6 @@ def main():
     while True:
         client.conn()
         client.send_msg(input("Message: "))
-        #client.recieve_msg()
-
-        #send_thread = threading.Thread(client.send_msg(input("Message: ")))        
-        #send_thread.start()
-
-        #rec_thread = threading.Thread(client.recieve_msg())
-        #rec_thread.start()
-
 
 if __name__ == "__main__":
     main()
