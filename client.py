@@ -11,8 +11,8 @@ class TCP_conn_client: # (threading.Thread):
     #def __init__(self):
     def conn(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.connect((socket.gethostname(),5000))
-        #self.sock.connect(('localhost',5000))
+        #self.sock.connect((socket.gethostname(),5000))
+        self.sock.connect(('localhost',5000))
     #send message function
     def send_msg(self, msg):
         self.sock.send((msg).encode())
